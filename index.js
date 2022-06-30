@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
+const { Intents } = require('discord.js');
+const myIntents = new Intents();
+myIntents.add(Intents.FLAGS.GUILD_MEMBERS);
+
 const { AkairoClient, CommandHandler } = require('discord-akairo');
 const MongooseProvider = require('akairo-mongoose');
 require('dotenv').config();
@@ -44,7 +48,7 @@ mongoose
         useUnifiedTopology: true
     })
     .then(() => {
-        const client = new CustomClient();
+        const client = new CustomClient({intents: myIntents });
         client.login(process.env.TOKEN);
     })
     .catch((err) => console.log(err));
