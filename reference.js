@@ -2,10 +2,14 @@ const Discord = require('discord.js');
 const config = require('./config.json');
 let colors = config.colors
 
- function success(description, message) {
+ function success(description, message, includeTag) {
     let color = colors[Math.floor(Math.random() * colors.length)];	
     const successEmbed = new Discord.MessageEmbed();
-    successEmbed.setDescription("**" + message.member.user.tag + ",** " + description);
+    if(includeTag != true) {
+        successEmbed.setDescription(description);
+    } else {
+        successEmbed.setDescription("**" + message.member.user.tag + ",** " + description);
+    }
     successEmbed.setColor(color);
     return successEmbed;
   }
