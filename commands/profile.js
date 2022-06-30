@@ -23,7 +23,7 @@ class ProfileCommand extends Command {
             p = this.client.settings.get(args.username.id, 'userInfo');
             w = args.username.user.tag;
             if(p == undefined) {
-                logError = "that user has't set their about me yet."
+                logError = "that user has't set their about me yet.."
             } 
         }
         if(p == undefined && logError == "") {
@@ -33,7 +33,7 @@ class ProfileCommand extends Command {
         if(logError != "") {
             message.channel.send(error(logError, message));
         } else {
-            message.channel.send(success("** " + w + "**'s current about me is: **" + p + "**.", message, false));
+            message.channel.send(success("**" + w + "**'s current about me is: **" + p + "**.", message, false));
         }
     }
 }
