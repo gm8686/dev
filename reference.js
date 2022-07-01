@@ -5,11 +5,11 @@ let colors = config.colors
  function success(description, message, includeTag) {
     let color = colors[Math.floor(Math.random() * colors.length)];	
     const successEmbed = new Discord.MessageEmbed();
-    if(includeTag == false) {
-        successEmbed.setDescription(description);
-    } else {
-        successEmbed.setDescription("**" + message.member.user.tag + ",** " + description);
+    
+    if(includeTag == true) {
+        description = "**" + message.member.user.tag + ",** " + description;
     }
+    successEmbed.setDescription(description);
     successEmbed.setColor(color);
     return successEmbed;
   }
