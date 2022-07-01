@@ -33,7 +33,7 @@ class ProfileCommand extends Command {
         if(logError != "") {
             message.channel.send(error(logError, message));
         } else {
-            message.channel.send(success("** " + w + "**'s current about me is: **" + p + "**.", message, false));
+            message.channel.send(success("**" + w + "**'s current about me is: **" + p + "**.", message, false));
         }
     }
 }
