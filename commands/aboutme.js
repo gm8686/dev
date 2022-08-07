@@ -15,6 +15,7 @@ class AboutMeCommand extends Command {
             channel: 'guild'
         });
     }
+
     async exec(message, args) {
         await this.client.settings.set(message.member.user.id, 'userInfo', args.information);
         if(args.information != null) {
@@ -25,5 +26,6 @@ class AboutMeCommand extends Command {
             return message.channel.send(error("you need to pick a value.", message));
         }
     }
+    
 }
 module.exports = AboutMeCommand;

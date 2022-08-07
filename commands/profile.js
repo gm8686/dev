@@ -37,9 +37,8 @@ class ProfileCommand extends Command {
             message.channel.send(error(logError, message));
         } else {
             message.channel.send(profile(message, w, p, z))
-            //message.channel.send(success("**" + w + "**'s profile: \n\nAbout Me: **" + p + "**.", message, false));
         }
     }
-}
 
+}
 module.exports = ProfileCommand;

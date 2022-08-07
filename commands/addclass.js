@@ -18,10 +18,6 @@ class AddClassCommand extends Command {
     }
     
     async exec(message, args) {
-        if(this.client.settings.get(message.member.user.id, "classes") == undefined) {
-            //await this.client.settings.set(message.member.user.id, "classes", ["none"]);
-        }
-
         var arr = await this.client.settings.get(message.member.user.id, "classes") || [];
         console.log(arr);
         if(arr[0] == "none") {
@@ -41,8 +37,7 @@ class AddClassCommand extends Command {
         } else {
             message.channel.send(error("you need to specify a value.", message));
         }
-
-
     }
+    
 }
 module.exports = AddClassCommand;
