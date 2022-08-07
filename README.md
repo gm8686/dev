@@ -1,3 +1,1 @@
-Currently in development, the msn project will interate through data objects from a FIFA related dataset and allow users to optimize teams based on ideal player positions and stat values. 
-
-TODO: relocate database module
+Currently in development, this expiremental prototype is meant to streamline studying related topics with overhauled features meant to reduce the amount of user coordination in a typical environment.
