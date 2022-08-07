@@ -18,18 +18,18 @@ class RemoveClassCommand extends Command {
     }
     
     async exec(message, args) {
-        if(this.client.settings.get(message.member.user.id, "classes") == undefined) {
-           return message.channel.send(error("you don't have any classes to remove."), message);
-        }
+
 
         var arr = await this.client.settings.get(message.member.user.id, "classes") || [];
+        if(arr[0] == "none" || this.client.settings.get(message.member.user.id, "classes") == undefined) {
+            return message.channel.send(error("you don't have any classes to remove.", message));
+        }
         if(args.information != null) {
 
             const result = arr.findIndex( item =>  args.information.toLowerCase() === item.toLowerCase());
             if(result == -1) {
                 return message.channel.send(error("you don't currently have that class.", message));
             } else {
-                console.log(result);
                 message.channel.send(success("you've successfully removed **" + arr[result] + "** from your class list.", message, true))
                 if(result == 0) {
                     if(arr.length == 1) {
@@ -41,7 +41,6 @@ class RemoveClassCommand extends Command {
                 }
                 await this.client.settings.set(message.member.user.id, "classes", arr)
             }
-            console.log(result);
         } else {
             message.channel.send(error("you need to specify a value.", message));
         }
