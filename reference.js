@@ -21,4 +21,25 @@ function error(description, message) {
     failEmbed.setColor("#ff0000");
     return failEmbed;
 }
-  module.exports = { success, error };
+
+function profile(message, x, y, z) {
+  let color = colors[Math.floor(Math.random() * colors.length)];	
+  const prof = new Discord.MessageEmbed();
+  var arr =  z;
+  var classList = "";
+
+  if(arr != undefined) {
+    for (let i = 0; i < arr.length; i++) {
+      classList += arr[i] + ", ";
+    }
+  } else {
+    classList += "none  ";
+  }
+
+  classList = classList.slice(0, -2);
+  prof.setDescription("**About Me**: " + y + "\n\n**Current Classes**: " + classList);
+	prof.setAuthor(x.user.username + "'s profile","https://cdn.discordapp.com/avatars/" + x.id + "/" + x.user.avatar + ".webp");
+  prof.setColor(color);
+  return prof;
+}
+  module.exports = { success, error, profile };

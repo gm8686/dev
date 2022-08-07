@@ -1,3 +1,4 @@
 {
-    "colors" : ["#03f4fc", "#fc03ce", "#00ff2a", "#ffd900"]
+    "colors" : ["#03f4fc", "#fc03ce", "#00ff2a", "#ffd900"],
+    "classes" : ["AP Calculus", "AP US History", "AP Spanish Language", "AP English Language", "AP Physics", "AP Computer Science", "AP Psychology", "AP Chemistry", "AP Biology", "Precalculus", "US History", "Physics"]
 }
