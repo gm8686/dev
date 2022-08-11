@@ -34,9 +34,9 @@ class ProfileCommand extends Command {
         }
 
         if(logError != "") {
-            message.channel.send(error(logError, message));
+            message.channel.send({ embeds: [error(logError, message)] });
         } else {
-            message.channel.send(profile(message, w, p, z))
+            message.channel.send({ embeds: [profile(message, w, p, z)] });
         }
     }
 

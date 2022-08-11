@@ -9,27 +9,36 @@ const model = require('./models/guild');
 
 class CustomClient extends AkairoClient {
     constructor() {
-        super(
-            {
-                ownerID: '959638717239296040'
-            },
-            {
-                disableMentions: 'everyone'
-            }
-        );
+
+
+        super({},{
+            intents: [
+                "GUILDS",
+                "GUILD_MEMBERS",
+                "GUILD_MESSAGES",
+                "GUILD_BANS",
+                "GUILD_MESSAGE_REACTIONS",
+                "DIRECT_MESSAGES",
+                "DIRECT_MESSAGE_REACTIONS",
+              ],
+        })
+
+        // super(
+        //     {
+        //         ownerID: '959638717239296040'
+        //     },
+        //     {
+        //         disableMentions: 'everyone'
+        //     }
+        // );
 
         this.settings = new MongooseProvider(model);
 
         this.commandHandler = new CommandHandler(this, {
             directory: './commands/',
-            prefix: (message) => {
-                if (message.guild) {
-                    return this.settings.get(message.guild.id, 'prefix', '$');
-                }
-
-                return '$';
-            }
+            prefix: '$',
         });
+        
 
         this.commandHandler.loadAll();
     }

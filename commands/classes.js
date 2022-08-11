@@ -18,7 +18,7 @@ class ClassesCommand extends Command {
             classList += "*" + actualClasses[i] + "*, ";
         }
         classList = classList.slice(0, -2);
-        message.channel.send(success("here are the classes currently in the database: \n\n" + classList, message, true));
+        message.channel.send({ embeds: [success("here are the classes currently in the database: \n\n" + classList, message, true)] });
     }
     
 }

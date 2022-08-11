@@ -19,13 +19,13 @@ class AboutMeCommand extends Command {
     async exec(message, args) {
         if(args.information != null) {
             if(args.information.length > 100) {
-                return message.channel.send(error("the character limit for this module is 100.", message));
+                return message.channel.send({ embeds: [error("the character limit for this module is 100.", message)] });
             } else {
                 await this.client.settings.set(message.member.user.id, 'userInfo', args.information);
-                return message.channel.send(success("you've successfully set your about me to **" + args.information + "**.", message));
+                return message.channel.send({ embeds: [success("you've successfully set your about me to **" + args.information + "**.", message)] });
             }
         }  else {
-            return message.channel.send(error("you need to pick a value.", message));
+            return message.channel.send({ embeds: [error("you need to pick a value.", message)] });
         }
     }
 

@@ -38,7 +38,12 @@ function profile(message, x, y, z) {
 
   classList = classList.slice(0, -2);
   prof.setDescription("**About Me**: " + y + "\n\n**Current Classes**: " + classList);
-	prof.setAuthor(x.user.username + "'s profile","https://cdn.discordapp.com/avatars/" + x.id + "/" + x.user.avatar + ".webp");
+  var str = "https://cdn.discordapp.com/avatars/" + x.id + "/" + x.user.avatar + ".webp";
+  prof.setAuthor({
+    name: x.user.username + "'s profile",
+    iconURL: str,
+  })
+	//prof.setAuthor(x.user.username + "'s profile","https://cdn.discordapp.com/avatars/" + x.id + "/" + x.user.avatar + ".webp");
   prof.setColor(color);
   return prof;
 }
