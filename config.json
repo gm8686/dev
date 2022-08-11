@@ -1,4 +1,5 @@
 {
     "colors" : ["#03f4fc", "#fc03ce", "#00ff2a", "#ffd900"],
-    "classes" : ["AP Calculus", "AP US History", "AP Spanish Language", "AP English Language", "AP Physics", "AP Computer Science", "AP Psychology", "AP Chemistry", "AP Biology", "Precalculus", "US History", "Physics"]
+    "classes" : ["AP Calculus", "AP US History", "AP Spanish Language", "AP English Language", "AP Physics", "AP Computer Science", "AP Psychology", "AP Chemistry", "AP Biology", "Precalculus"],
+    "channelIDs" : ["1005913076530434220", "1005913079504179200", "1005913080280137788", "1005913081098014814", "1005913082100461649", "1005913083316818030", "1005913084541534278", "1005913085443317780", "1005913086231847032", "1005913087108460684"]
 }

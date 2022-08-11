@@ -19,10 +19,15 @@ class RemoveClassCommand extends Command {
             return message.channel.send(error("you don't have any classes to remove.", message));
         }
         if (args.information != null) {
-            const result = arr.findIndex(item => args.information.toLowerCase() === item.toLowerCase());
+            const result = arr.findIndex( item =>  item.toLowerCase().includes(args.information.toLowerCase()));
             if (result == -1) {
                 return message.channel.send(error("you don't currently have that class.", message));
             } else {
+                message.guild.channels.cache.forEach(ch => 
+                    {
+                        if(ch.name == (arr[result].replace(/\s/g, "-").toLowerCase()))
+                        ch.updateOverwrite(message.member.user.id, { VIEW_CHANNEL: false, SEND_MESSAGES: false });
+                    }) 
                 message.channel.send(success("you've successfully removed **" + arr[result] + "** from your class list.", message, true))
                 if (result == 0) {
                     if (arr.length == 1) {
@@ -38,6 +43,6 @@ class RemoveClassCommand extends Command {
             message.channel.send(error("you need to specify a value.", message));
         }
     }
-    
+
 }
 module.exports = RemoveClassCommand;

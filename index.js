@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const { Intents } = require('discord.js');
-const myIntents = new Intents();
-myIntents.add(Intents.FLAGS.GUILD_MEMBERS);
 
 const { AkairoClient, CommandHandler } = require('discord-akairo');
 const MongooseProvider = require('akairo-mongoose');
@@ -48,7 +46,7 @@ mongoose
         useUnifiedTopology: true
     })
     .then(() => {
-        const client = new CustomClient({intents: myIntents });
+        const client = new CustomClient({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
         client.login(process.env.TOKEN);
     })
     .catch((err) => console.log(err));
