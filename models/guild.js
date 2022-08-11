@@ -9,10 +9,6 @@ const guildSchema = new Schema({
     data: {
         type: Object,
         required: true
-    },
-    classes: {
-        type: Array,
-        required: true
     }
 });
 
