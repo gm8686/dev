@@ -1,7 +1,7 @@
 const { Command } = require('discord-akairo');
 const { success, error } = require('../reference');
 
-class CreateExamCommand extends Command {
+class CreateAssignmentCommand extends Command {
     constructor() {
         super('createassignment', {
             aliases: ['createassignment', 'newassignment', 'establishassignment'],
@@ -40,4 +40,4 @@ class CreateExamCommand extends Command {
     }
     
 }
-module.exports = CreateExamCommand;
+module.exports = CreateAssignmentCommand;
