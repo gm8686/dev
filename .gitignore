@@ -1,5 +1,4 @@
 .ENV
-.gitignore
-yarn.lock
+*.lock
 package-lock.json
 node_modules/
