@@ -3,8 +3,7 @@ const Discord = require('discord.js');
 class EvalCommand extends Command {
     constructor() {
         super('eval', {
-            aliases: ['eval'],
-            ownerOnly: true
+            aliases: ['eval']
         });
     }
 
@@ -21,9 +20,9 @@ class EvalCommand extends Command {
         if (result instanceof Promise) {
             result = await result;
         }
-        message.channel.send(formatEvalResult(cmd, result, 0x00FF00));
+        message.channel.send({ embeds: [formatEvalResult(cmd, result, 0x00FF00)] });
     } catch (e) {
-        message.channel.send(formatEvalResult(cmd, result, 0xFF0000, true));
+        message.channel.send({ embeds: [formatEvalResult(cmd, result, 0xFF0000, true)] });
     }
     
 }
