@@ -15,7 +15,6 @@ let colors = config.colors
   }
 
 function error(description, message) {
-    let color = colors[Math.floor(Math.random() * colors.length)];	
     const failEmbed = new Discord.MessageEmbed();
     failEmbed.setDescription("**" + message.member.user.tag + ",** " + description);
     failEmbed.setColor("#ff0000");
@@ -43,7 +42,6 @@ function profile(message, x, y, z) {
     name: x.user.username + "'s profile",
     iconURL: str,
   })
-	//prof.setAuthor(x.user.username + "'s profile","https://cdn.discordapp.com/avatars/" + x.id + "/" + x.user.avatar + ".webp");
   prof.setColor(color);
   return prof;
 }
