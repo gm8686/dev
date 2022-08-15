@@ -46,3 +46,5 @@ class RemoveClassCommand extends Command {
 
 }
 module.exports = RemoveClassCommand;
+
+
