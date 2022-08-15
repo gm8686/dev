@@ -1,5 +1,4 @@
 const { Command } = require('discord-akairo');
-const { MessageEmbed } = require('discord.js');
 const { success, error } = require('../reference');
 
     class CardsCommand extends Command {
