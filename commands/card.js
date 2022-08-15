@@ -29,12 +29,12 @@ const { success, error } = require('../reference');
                       .then(collected => w = JSON.stringify(collected))
                       .catch(collected => w = "x");
                     if(w == "x") {
-                        message.channel.send({embeds: [error("you didn't respond in the given time. Please try again using ``$cards``.", message)]});
+                        message.channel.send({embeds: [error("you didn't respond in the given time. Please try again using ``$card``.", message)]});
                     } else {
                         if(JSON.parse(w)[0].content.toLowerCase() == arr[num][1].toLowerCase()) {
                             message.channel.send({embeds: [success("you correctly answered the term: **" + arr[num][0] + "**.", message, true)]});
                         } else {
-                            message.channel.send({embeds: [error("you didn't answer this card correctly. Please try again using ``$cards``.", message)]});
+                            message.channel.send({embeds: [error("you didn't answer this card correctly. Please try again using ``$card``.", message)]});
                         }
                     }
                 }
