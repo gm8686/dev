@@ -1,1 +1,1 @@
-Currently in development, this expiremental prototype is meant to streamline studying related topics with overhauled features meant to reduce the amount of user coordination in a typical environment.
+:)
